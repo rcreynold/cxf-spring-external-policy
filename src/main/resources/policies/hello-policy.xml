@@ -1,0 +1,20 @@
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+            xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+            xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"
+            wsu:Id="HelloPolicy">
+    <wsp:ExactlyOne>
+        <wsp:All>
+            <sp:TransportBinding>
+                <sp:TransportToken>
+                    <sp:HttpsToken RequireClientCertificate="false"/>
+                </sp:TransportToken>
+                <sp:AlgorithmSuite>
+                    <sp:Basic256/>
+                </sp:AlgorithmSuite>
+                <sp:Layout>
+                    <sp:Strict/>
+                </sp:Layout>
+            </sp:TransportBinding>
+        </wsp:All>
+    </wsp:ExactlyOne>
+</wsp:Policy>
